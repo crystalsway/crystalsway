@@ -7,5 +7,24 @@
   <body>
     <!-- Your web page content here -->
     <h1>Welcome to my web app!</h1>
+    <script>
+      // Telegram bot webhook listener
+      const telegramWebhook = async (req, res) => {
+        const telegramBotToken = '7379513505:AAHiVh2swtdJNX1QFMmynk4ew7OghsUpUG8';
+        const telegramBotUrl = `https://t.me/CrystalsWay_Bot`;
+
+        if (req.method === 'POST') {
+          const update = req.body;
+          // Handle Telegram bot updates here
+          console.log(`Received update: ${JSON.stringify(update)}`);
+          // You can also call your Python script here using an API or a webhook
+        }
+
+        res.status(200).send('OK');
+      };
+
+      // Set up the webhook listener
+      telegramWebhook();
+    </script>
   </body>
 </html>
